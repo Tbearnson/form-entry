@@ -1,0 +1,21 @@
+{
+  "name": "Validator",
+  "version": "1.0.0",
+  "size": {
+    "width": 2,
+    "height": 2
+  },
+  "mapping": [
+    {
+      "alias": "cap",
+      "dataSetId": "c7fd3aa5-93c0-4aae-8ba1-116ead80dcee",
+      "fields": []
+    },
+    {
+      "alias": "location",
+      "dataSetId": "6afca716-7add-45ba-9ea4-1c9e0605f7fa",
+      "fields": []
+    }
+  ],
+  "id": "f1281dcb-5a21-49da-ba0a-54a4ed852c33"
+}

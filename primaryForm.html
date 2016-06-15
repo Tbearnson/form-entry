@@ -1,0 +1,29 @@
+<form ng-submit="vm.writeData()" name="vm.form" novalidate>
+		<h3>CMS Form</h3>
+		<!-- <formly-form model="vm.rental" fields="vm.rentalFields" form="vm.form">
+			<button type="submit" class="btn btn-primary">Upload</button>
+		</formly-form> -->
+		<div class="row">
+			<div class="col-xs-5" id="username">
+				<input placeholder="User Name" ng-model="vm.username">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-5" id="Date">
+				<p class="input-group">
+		        	<input type="text" class="form-control" uib-datepicker-popup="MM/dd/yyyy" ng-model="vm.date" is-open="vm.date_open" ng-required="true" close-text="Close" />
+		        	<span class="input-group-btn">
+		          		<button type="button" class="btn btn-default" ng-click="vm.date_open = !vm.date_open"><i class="glyphicon glyphicon-calendar"></i></button>
+		        	</span>
+		        </p>
+			</div>
+		</div>
+		<div class="row">
+			<select ng-options="option as option for option in vm.capOptions" ng-model="vm.cap"></select>
+		</div>
+		<div class="row">
+			<div class="col-xs-5" id="file">
+				<input placeholder="Enter file #" ng-model="vm.file">
+			</div>
+		</div>
+</form>
