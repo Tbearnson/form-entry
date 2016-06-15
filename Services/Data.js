@@ -1,7 +1,7 @@
 function Data($http,$rootScope,domo) {
 	var the_data = {};
 	the_data.writeNewRow = function(row_data) {
-		
+		return 'This is a thing.';
 	};
 
 	domo.get('/data/v1/cap').then(function(data){
