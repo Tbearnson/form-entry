@@ -1,31 +1,50 @@
-<form ng-submit="vm.writeData()" name="vm.form" novalidate>
-	<h3>CMS Form</h3>
-	<div class="row">
-		<div class="col-xs-5" id="username">
-			<input placeholder="User Name" ng-model="vm.username">
+<form name="vm.form" novalidate>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="form-group col-xs-5">
+				<label for="username">Name:</label>
+				<input type="text" ng-model="vm.username" class="form-control" id="username">
+			</div>
 		</div>
-	</div>
-	<div class="row">
-		<div class="col-xs-5" id="Date">
-			<p class="input-group">
-				<input type="text" class="form-control" uib-datepicker-popup="MM/dd/yyyy" ng-model="vm.date" is-open="vm.date_open" ng-required="true" close-text="Close" />
-				<span class="input-group-btn">
-			  		<button type="button" class="btn btn-default" ng-click="vm.date_open = !vm.date_open"><i class="glyphicon glyphicon-calendar"></i></button>
-				</span>
-			</p>
+		<div class="row">
+			<div class=" form-group col-xs-5" id="Date">
+				<label for="date">Date:</label>
+				<p class="input-group">
+					<input type="text" class="form-control" uib-datepicker-popup="MM/dd/yyyy" ng-model="vm.date" is-open="vm.date_open" ng-required="true" close-text="Close" />
+					<span class="input-group-btn">
+						<button type="button" class="btn btn-default" ng-click="vm.date_open = !vm.date_open"><i class="glyphicon glyphicon-calendar"></i></button>
+					</span>
+				</p>
+			</div>
 		</div>
-	</div>
-	<div class="row">
-		<select ng-options="option as option for option in vm.capOptions" ng-model="vm.cap"></select>
-	</div>
-	<div class="row">
-		<div class="col-xs-5" id="file">
-			<input placeholder="Enter file #" ng-model="vm.file">
+		<div class="row">
+			<div class = "form-group col-xs-6">
+				<label for="sel1">Cap # (select one):</label>
+				<select class="form-control" ng-options="option as option for option in vm.locationOptions" ng-model="vm.location"></select>
+			</div>
 		</div>
-	</div>
-	<div class="row">
-		<div class="col-xs-5" id="file2">
-			<input placeholder="Enter file #" ng-model="vm.file">
+		<div class="row">
+			<div class = "form-group col-xs-6">
+				<label for="sel1">Location list (select one):</label>
+				<select class="form-control" ng-options="option as option for option in vm.capOptions" ng-model="vm.cap"></select>
+			</div>	
 		</div>
+		<div class="row">
+			<div class="form-group col-xs-5">
+				<label for="file">File #:</label>
+				<input type="text" ng-model="vm.file" class="form-control" id="file">
+			</div>
+		</div>
+		<div class="row">
+			<div class="form-group col-xs-5">
+				<p>Was the file correct?</p>
+				<label class="radio-inline"><input type="radio" value = 1 ng-model="vm.correct" name="choice">Correct</label>
+				<label class="radio-inline"><input type="radio" value = 0 ng-model="vm.correct" name="choice">Incorrect</label>
+			</div>
+		</div>
+		
 	</div>
+	<button type="button" class="btn btn-primary" ng-click="tanner()">Upload to Domo</button>
 </form>
+
+
