@@ -1,0 +1,71 @@
+<html ng-app="cmsForm">
+      <head>
+            <title>CMS Form</title>
+
+            <!-- Stylesheets -->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+            <!-- Application Dependencies -->
+            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-filter/0.5.8/angular-filter.min.js"></script>
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js"></script>
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.3.3/ui-bootstrap-tpls.min.js"></script>
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.13.1/lodash.min.js"></script>
+
+            <!-- Application Scripts -->
+            
+      </head>
+
+    <body ng-app="cmsForm" ng-controller="PrimaryFormController as vm">
+        <form name="vm.form" novalidate>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="form-group col-xs-12">
+                        <label for="username">Name:</label>
+                        <input type="text" ng-model="vm.username" class="form-control" id="username">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class=" form-group col-xs-12" id="Date">
+                        <label for="date">Date:</label>
+                        <p class="input-group">
+                            <input type="text" class="form-control" uib-datepicker-popup="MM/dd/yyyy" ng-model="vm.date" is-open="vm.date_open" ng-required="true" close-text="Close" datepicker-options="{'maxMode':'day'}" />
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-default btn-enlarge" ng-click="vm.date_open = !vm.date_open"><i class="glyphicon glyphicon-calendar"></i></button>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class = "form-group col-xs-6">
+                        <label for="sel1">Cap #:</label>
+                        <select class="form-control" ng-options="option as option for option in vm.capOptions" ng-model="vm.cap"></select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class = "form-group col-xs-6">
+                        <label for="sel1">Location:</label>
+                        <select class="form-control" ng-options="option as option for option in vm.locationOptions" ng-model="vm.location"></select>
+                    </div>  
+                </div>
+                <div class="row">
+                    <div class="form-group col-xs-12">
+                        <label for="file">File #:</label>
+                        <input type="text" ng-model="vm.file" class="form-control" id="file">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-xs-12">
+                        <label for="choice">Was the file correct?</label>
+                        <label class="radio-inline"><input type="radio" value="1" ng-model="vm.correct" name="correct?">Correct</label>
+                        <label class="radio-inline"><input type="radio" value="0" ng-model="vm.correct" name="correct?">Incorrect</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-actions">
+                <button type="button" class="btn btn-primary btn-upload" ng-click="vm.submit()">Submit</button>
+            </div>
+        </form>
+    </body>
+</html>
